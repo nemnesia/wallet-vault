@@ -83,7 +83,9 @@ npm run test:browser
 
 2026-10-22 の確認結果：上記チェック、Rust 4件・TypeScript 10件、ブラウザ統合検証は成功。
 Chromium for Testing 156.0.8078.4 上で実行しました。
-**実認証器による PRF / UV / 毎回の認証画面の検証は未実施です。**
+その後ユーザーが Windows / Chrome 155 環境で、保存・再認証復号・失敗経路・
+連続2回の認証画面の再提示を手動確認しました。認証器/provider名は未記録です。
+[手動検証結果と未確認範囲](../../../vault-docs/docs/prototypes/results/2026-10-22-chrome-windows.md)を参照してください。
 
 ## 実装と撤去の境界
 
@@ -100,5 +102,6 @@ Session はタブ単位で独立し、worker に鍵・要求を保存しませ�
 JS/WASM の完全な秘密消去、侵害された同一ページからの隔離、正当な旧データの巻戻し検知は保証しません。
 実認証器の保存・同期機能や IndexedDB の不消失も保証しません。
 
-撤去時は `prototypes/chrome-extension/`、専用文書、README のプロトタイプ案内を削除します。
+検証結果は製品仕様への結論・制約の引継ぎが済むまで保持します。
+その後の撤去時に `prototypes/chrome-extension/`、専用文書、README のプロトタイプ案内を削除します。
 ローカル Chrome の拡張を削除するときは、検証用保存データと認証器側 Credential も別々に整理してください。
