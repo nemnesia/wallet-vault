@@ -4,3 +4,10 @@
 **/pkg/
 **/test-results/
 **/playwright-report/
+**/.gradle/
+**/.kotlin/
+**/.cxx/
+**/build/
+**/local.properties
+**/jniLibs/
+**/.emulator/
