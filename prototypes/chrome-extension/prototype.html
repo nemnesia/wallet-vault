@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vault Passkey Prototype</title></head>
+<body>
+<main>
+  <header><p class="eyebrow">VAULT / CHROME PROTOTYPE</p><h1>Passkeyで保護し、<br>WASMで復号する。</h1>
+  <p>検証用データを暗号化してIndexedDBに保存します。ページを開き直し、再認証して復号を確認してください。</p></header>
+  <section class="environment"><h2>実行環境</h2><p id="environment"></p><p>認証器・provider: <input id="provider" placeholder="例: OS内蔵 / セキュリティキー" maxlength="120"></p>
+  <p>認証画面の毎回の再提示は目視で確認してください。API呼出し成功だけでは判定しません。</p></section>
+  <div class="columns">
+  <section><span class="number">01</span><h2>登録・暗号化・保存</h2>
+    <label for="label">検証用Profile名（UTF-8で64バイトまで）</label>
+    <input id="label" value="検証Profile" maxlength="64">
+    <button id="register" disabled>Passkeyを登録して保存</button>
+    <p>登録と、Profile用・Signing用の認証を順に行います。実運用の秘密情報は入力しません。</p>
+    <label class="checkbox"><input id="abort-save" type="checkbox">保存途中でabortを注入（失敗確認用）</label>
+  </section>
+  <section><span class="number">02</span><h2>再認証して復号</h2>
+    <label for="profiles">保存済みProfile</label><select id="profiles"></select>
+    <div class="actions"><button id="refresh" disabled>一覧を更新</button><button id="open" disabled>Profileを復号</button></div>
+    <p>タブを閉じても暗号文は残ります。再読込後はlocked状態から開始します。</p>
+    <div class="actions"><button id="prepare" disabled>一回限りの要求を準備</button><button id="execute" disabled>再認証してSigningデータを照合</button></div>
+  </section></div>
+  <section><h2>状態・失敗時の確認</h2><p>状態: <strong id="state">WASMを読み込み中</strong></p><p id="request">準備済み要求なし</p>
+    <div class="actions"><button id="cancel" disabled>取消</button><button id="lock" disabled>ロック</button>
+    <button id="tamper" disabled>改ざんしたコピーで復号を試す</button><button id="wrong-key" disabled>別Passkeyで復号を試す</button></div>
+    <p>改ざんテストは保存済みデータを変更しません。別Passkeyテストには2件の登録が必要です。</p>
+    <p>検証平文・PRF・鍵は表示しません。Signingデータの照合はSymbol/NEMの署名ではありません。</p>
+  </section>
+  <section><div class="log-head"><h2>観測ログ</h2><button id="copy">非秘密の結果をコピー</button></div>
+    <p id="result" role="status" aria-live="polite">初期化中</p><ol id="events"></ol>
+    <label for="observation">実機の観測（認証画面の再提示・取消・認証方式など）</label>
+    <textarea id="observation" rows="3" maxlength="2000" placeholder="秘密値やCredential IDを記入しないでください"></textarea>
+  </section>
+  <footer>削除予定の実験用実装。復旧・バックアップ・実署名・モバイル対応は含みません。</footer>
+</main><script type="module" src="/src/main.ts"></script>
+</body></html>

@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Vault Passkey Prototype",
+  "version": "0.0.1",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvFI4sghboUtXuWzv/u1vKrRj2Bg8Bbhnko7iKm1FVF3Fnrxh3v6Fty4oXnK7bLxrB3FICKR67AStnaCm48h2BmE1qu9FYvMvapEaALOyibS5ap0sQIOGDED7SDzb8bG9yNDse575pKqRmbjfB/7onkOC6ZkDUGMwAMg7gGSPHSBkVgcRD9fAq1+DhbNpAt75gxpoH46HAfCP0tnxDq+c/DEkikTxPdGYLMrI+jzXNCaDedZUUYN4MIqaYELiloYypYWr/TMuh8dLRtEQ+zjg9Bkix3UsCBhV7ImUvc9sKWaI/voDYXdyxOxm+elS1EhCFJGLG5pqTXEf8oOGjM8LGwIDAQAB",
+  "action": {
+    "default_title": "Vault プロトタイプを開く"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  }
+}

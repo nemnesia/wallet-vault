@@ -1,0 +1,21 @@
+{
+  "name": "vault-chrome-prototype",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:wasm": "wasm-pack build rust --target web --out-dir ../pkg --out-name vault --release --locked",
+    "build": "npm run build:wasm && vite build && node scripts/check-dist.mjs",
+    "check": "npm run build:wasm && tsc --noEmit && cargo fmt --manifest-path rust/Cargo.toml -- --check && cargo clippy --manifest-path rust/Cargo.toml --locked --all-targets -- -D warnings && cargo clippy --manifest-path rust/Cargo.toml --locked --target wasm32-unknown-unknown -- -D warnings",
+    "test": "cargo test --manifest-path rust/Cargo.toml --locked && vitest run",
+    "test:browser": "npm run build && node scripts/browser-test.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.1.24",
+    "fake-indexeddb": "6.2.6",
+    "playwright": "1.64.1",
+    "typescript": "5.9.3",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}
