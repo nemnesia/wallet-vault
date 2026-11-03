@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleIdentifier</key><string>dev.vault.prototype.ios.simulator</string>
+    <key>CFBundleName</key><string>Vault Simulator</string>
+    <key>CFBundleDisplayName</key><string>Vault1 iPhone PoC</string>
+    <key>CFBundleExecutable</key><string>VaultSimulator</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleVersion</key><string>1</string>
+    <key>CFBundleShortVersionString</key><string>0.0.0</string>
+    <key>MinimumOSVersion</key><string>18.0</string>
+    <key>LSRequiresIPhoneOS</key><true/>
+    <key>UIDeviceFamily</key><array><integer>1</integer></array>
+    <key>UILaunchScreen</key><dict/>
+    <key>NSFaceIDUsageDescription</key><string>Vault1 の検証用データを保護する鍵操作の本人認証に使用します。</string>
+</dict></plist>

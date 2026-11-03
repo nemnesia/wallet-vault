@@ -1,0 +1,12 @@
+{
+  "name": "vault-ios-prototype",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "check": "bash scripts/build.sh check",
+    "test": "bash scripts/build.sh test",
+    "build": "bash scripts/build.sh build",
+    "test:simulator": "node scripts/simulator-test.mjs",
+    "test:biometrics": "node scripts/biometric-test.mjs"
+  }
+}

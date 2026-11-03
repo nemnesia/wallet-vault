@@ -5,6 +5,10 @@
 ChromeではPasskey PRFとRust/WASM、AndroidではKeystore・BiometricPromptとNative Rustによる
 暗号化・保存・再認証での復号を検証します。
 
+[iPhone Native / Rust プロトタイプ](prototypes/ios/README.md)も追加しています。
+用途別の鍵ラップ・暗号化保存・再認証後の Rust 復号・一回限り照合を確認する実験用アプリです。
+Simulator のソフトウェア鍵検証と、実機の Secure Enclave 検証候補を区別します。React Native は未接続です。
+
 プロトタイプは最終的に削除する予定です。実装・依存・テストは
 各 `prototypes/` 専用ディレクトリ内にまとめており、対象ディレクトリを削除して撤去できます。
 製品実装・移行互換性・復旧機能は提供していません。

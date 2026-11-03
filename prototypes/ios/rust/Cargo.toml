@@ -1,0 +1,16 @@
+[package]
+name = "vault-ios-prototype"
+version = "0.0.0"
+edition = "2024"
+publish = false
+[lib]
+name = "vault_ios"
+crate-type = ["staticlib", "rlib"]
+[dependencies]
+aes-gcm = { version = "=0.10.3", default-features = false, features = ["aes", "alloc", "zeroize"] }
+sha2 = "=0.10.9"
+subtle = "=2.6.1"
+zeroize = "=1.9.0"
+getrandom = "=0.3.4"
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.145"
