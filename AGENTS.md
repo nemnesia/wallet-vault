@@ -23,7 +23,7 @@
 | モバイルプロトタイプ基本設計 | `../vault-docs/docs/prototypes/mobile-design.md` |
 | プロトタイプ検証計画 | `../vault-docs/docs/prototypes/authentication-adapters.md` |
 | プロトタイプ実装仕様 | `../vault-docs/docs/prototypes/chrome-extension-implementation.md`、`../vault-docs/docs/prototypes/android-implementation.md`、`../vault-docs/docs/prototypes/ios-implementation.md` |
-| 製品仕様 | [汎用 Rust Vault 詳細仕様](../vault-docs/docs/specifications/rust-vault.md)、[詳細仕様再レビュー006](../vault-docs/docs/specifications/rust-vault-review-006.md)。現行本文の承認・変更記録と実装依頼の範囲を確認する |
+| 製品仕様 | [汎用 Rust Vault 詳細仕様](../vault-docs/docs/specifications/rust-vault.md)、[詳細仕様再レビュー006](../vault-docs/docs/specifications/rust-vault-review-006.md)。S-10の変更再レビューは `../vault-docs/docs/specifications/rust-vault-review-008.md`。現行本文の承認・変更記録と実装依頼の範囲を確認する |
 | SDK 統合契約 | [Wallet / Vault 統合契約](../vault-docs/docs/specifications/wallet-vault-integration.md)。Vault 本体の仕様承認と区別し、本文の状態を確認する |
 | 製品成立性の実測計画 | [実測計画](../vault-docs/docs/prototypes/vault-product-validation.md)。計画と実施結果を区別する |
 
@@ -58,7 +58,7 @@
 
 実際の変更範囲に対応する検証を実行する。以下の実行ディレクトリは `vault` ルートからの相対パスである。
 依存・ツールチェーンの準備は対象の README に従い、未実行の検証と理由を報告する。
-製品用の下記ディレクトリ・manifest・検証スクリプトは今後の実装時の配置であり、現時点で存在・実行可能とは扱わない。
+製品 Rust の manifest・lockfile・Native / WASM検証は `rust/README.md` を参照する。OS Adapter のディレクトリ・手順は未作成であり、存在・実行可能とは扱わない。
 製品 crate 作成時は Rust のバージョン・必要 target・feature と lockfile を記録する。境界・Adapter の検証は実装時に具体的なコマンドを README に定義し、本表を更新する。
 
 | 変更範囲 | 検証手順・コマンド |
